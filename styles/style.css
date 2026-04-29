@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #3498db;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-dark: #2c3e50;
+    --soft-gray: #bdc3c7;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER COMPONENT */
+.app-header {
+    background: var(--card-bg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+/* MAIN CONTENT AREA */
+.app-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Makes it responsive for mobile */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    flex: 1;
+    min-width: 250px;
+}
+
+.control-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.preview-panel {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CANVAS COMPONENT */
+.canvas {
+    background: var(--card-bg);
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 2px dashed var(--soft-gray);
+}
+
+#target-box {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    transition: 0.3s ease; /* Makes changes smooth */
+}
+
+/* FOOTER COMPONENT */
+.app-footer {
+    padding: 1.5rem;
+    text-align: center;
+    background: #e9ecef;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Visual Generator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>CSS Visual Lab</h1>
+        <p>Interactive Styling Dashboard</p>
+    </header>
+
+    <main class="app-container">
+        <aside class="sidebar">
+            <div class="control-card">
+                <h3>Shape Controls</h3>
+                <div class="control-group">
+                    <label>Color</label>
+                    <input type="color" id="colorInput" value="#3498db">
+                </div>
+                <div class="control-group">
+                    <label>Rounding</label>
+                    <input type="range" id="radiusInput" min="0" max="100" value="15">
+                </div>
+            </div>
+        </aside>
+
+        <section class="preview-panel">
+            <div class="canvas">
+                <div id="target-box">Preview</div>
+            </div>
+            <div class="code-output">
+                <pre><code id="css-code">/* Your CSS will appear here */</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 CSS Generator Tool | Designed for DIYInternship</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
