@@ -85,3 +85,49 @@ body {
     font-size: 0.85rem;
     color: #7f8c8d;
 }
+/* Layout Containers */
+.preview-area {
+    border: 2px dashed #4A90E2;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 200px;
+    background: #fff;
+}
+
+/* Template 1: 3x3 Grid */
+.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Template 2: Two Columns */
+.layout-column {
+    display: flex;
+    gap: 15px;
+}
+
+/* Template 3: Card Row */
+.layout-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Placeholder Boxes */
+.box {
+    background: #4A90E2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.code-output {
+    margin-top: 20px;
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+}

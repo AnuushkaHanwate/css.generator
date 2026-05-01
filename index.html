@@ -15,17 +15,33 @@
 
     <main class="app-container">
         <aside class="sidebar">
-            <div class="control-card">
-                <h3>Shape Controls</h3>
-                <div class="control-group">
-                    <label>Color</label>
-                    <input type="color" id="colorInput" value="#3498db">
-                </div>
-                <div class="control-group">
-                    <label>Rounding</label>
-                    <input type="range" id="radiusInput" min="0" max="100" value="15">
-                </div>
-            </div>
+        <div class="control-card">
+    <h3>Shape Controls</h3>
+    
+    <label for="templateSelector">Select Layout Template</label>
+    <select id="templateSelector">
+        <option value="grid">3x3 Photo Grid</option>
+        <option value="column">Two-Column Article</option>
+        <option value="card">Product Card</option>
+    </select>
+
+    <hr>
+    
+    <div class="control-group">
+        <label>Color</label>
+        <input type="color" id="bgColorPicker" value="#3498db">
+    </div>
+
+    <div class="control-group">
+        <label>Rounding</label>
+        <input type="range" id="roundingSlider" min="0" max="50" value="0">
+    </div>
+
+    <div class="control-group">
+        <label>Font Size</label>
+        <input type="range" id="fontSizeSlider" min="12" max="32" value="16">
+        </div>
+         </div>
         </aside>
 
         <section class="preview-panel">
@@ -33,7 +49,7 @@
                 <div id="target-box">Preview</div>
             </div>
             <div class="code-output">
-                <pre><code id="css-code">/* Your CSS will appear here */</code></pre>
+                <pre id="cssOutput">/* Your CSS will appear here */</pre>
             </div>
         </section>
     </main>
