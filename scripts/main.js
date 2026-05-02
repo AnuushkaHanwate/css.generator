@@ -1,10 +1,11 @@
 // 1. Get all the UI elements from your HTML
 const templateSelector = document.getElementById('templateSelector');
 const previewContainer = document.getElementById('target-box');
-const cssOutput = document.getElementById('cssOutput');
+const cssOutput = document.getElementById('cssOutput'); // Keep this one!
 const bgColorPicker = document.getElementById('bgColorPicker');
-const roundingSlider = document.getElementById('roundingSlider'); // New ID
+const roundingSlider = document.getElementById('roundingSlider');
 const fontSizeSlider = document.getElementById('fontSizeSlider');
+const copyBtn = document.getElementById('copyBtn');
 
 // 2. Define the layouts
 const templates = {
@@ -32,7 +33,7 @@ function updateAll() {
     // Update the visual Preview
     previewContainer.innerHTML = templates[selected].html;
     previewContainer.style.backgroundColor = color;
-    previewContainer.style.borderRadius = round + 'px'; // This makes it curve!
+    previewContainer.style.borderRadius = round + 'px'; 
     previewContainer.style.fontSize = font + 'px';
     
     // Update the Code Box
@@ -44,11 +45,22 @@ function updateAll() {
     item.addEventListener('input', updateAll);
 });
 
+// 5. Copy to Clipboard logic
+copyBtn.addEventListener('click', () => {
+    const codeToCopy = cssOutput.textContent;
+
+    navigator.clipboard.writeText(codeToCopy).then(() => {
+        copyBtn.textContent = "Copied!";
+        copyBtn.style.background = "#28a745"; 
+        copyBtn.style.color = "white";
+
+        setTimeout(() => {
+            copyBtn.textContent = "Copy to Clipboard";
+            copyBtn.style.background = ""; 
+            copyBtn.style.color = "";
+        }, 2000);
+    });
+});
+
 // Run once on startup to set the initial look
 updateAll();
-
-// Copy function
-function copyCSS() {
-    navigator.clipboard.writeText(cssOutput.textContent);
-    alert("CSS Copied to Clipboard!");
-}
