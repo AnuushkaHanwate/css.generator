@@ -1,13 +1,13 @@
-// 1. Get all the UI elements from your HTML
+// 1. Get all the UI elements
 const templateSelector = document.getElementById('templateSelector');
 const previewContainer = document.getElementById('target-box');
-const cssOutput = document.getElementById('cssOutput'); // Keep this one!
+const cssOutput = document.getElementById('cssOutput');
 const bgColorPicker = document.getElementById('bgColorPicker');
 const roundingSlider = document.getElementById('roundingSlider');
 const fontSizeSlider = document.getElementById('fontSizeSlider');
 const copyBtn = document.getElementById('copyBtn');
 
-// 2. Define the layouts
+// 2. Define the layout templates
 const templates = {
     grid: {
         html: '<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;"><div>1</div><div>2</div><div>3</div></div>',
@@ -45,22 +45,27 @@ function updateAll() {
     item.addEventListener('input', updateAll);
 });
 
-// 5. Copy to Clipboard logic
+// 5. Week 6: Professional Clipboard Logic
 copyBtn.addEventListener('click', () => {
     const codeToCopy = cssOutput.textContent;
 
+    // Using the modern Navigator API (Week 6 requirement)
     navigator.clipboard.writeText(codeToCopy).then(() => {
-        copyBtn.textContent = "Copied!";
+        // Visual feedback
+        copyBtn.textContent = "✓ Copied!";
         copyBtn.style.background = "#28a745"; 
         copyBtn.style.color = "white";
 
+        // Reset after 2 seconds
         setTimeout(() => {
             copyBtn.textContent = "Copy to Clipboard";
             copyBtn.style.background = ""; 
             copyBtn.style.color = "";
         }, 2000);
+    }).catch(err => {
+        console.error('Could not copy text: ', err);
     });
 });
 
-// Run once on startup to set the initial look
+// Run once on startup
 updateAll();
